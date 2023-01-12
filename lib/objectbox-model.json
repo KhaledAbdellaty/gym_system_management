@@ -1,0 +1,400 @@
+{
+  "_note1": "KEEP THIS FILE! Check it into a version control system (VCS) like git.",
+  "_note2": "ObjectBox manages crucial IDs for your object model. See docs for details.",
+  "_note3": "If you have VCS merge conflicts, you must resolve them according to ObjectBox docs.",
+  "entities": [
+    {
+      "id": "1:5046885711521420716",
+      "lastPropertyId": "2:4618595258260712551",
+      "name": "Accounts",
+      "properties": [
+        {
+          "id": "1:2041542710987964233",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:4618595258260712551",
+          "name": "accountName",
+          "type": 9
+        }
+      ],
+      "relations": [
+        {
+          "id": "8:3320337800475808748",
+          "name": "payments",
+          "targetId": "6:1759709665385556246"
+        }
+      ]
+    },
+    {
+      "id": "2:2111034196767112796",
+      "lastPropertyId": "11:3758662647740822852",
+      "name": "Bills",
+      "properties": [
+        {
+          "id": "1:1386989662685609262",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "4:3474196773944970428",
+          "name": "memberId",
+          "type": 11,
+          "flags": 520,
+          "indexId": "1:8391439666834430336",
+          "relationTarget": "Member"
+        },
+        {
+          "id": "5:7577477551956215029",
+          "name": "status",
+          "type": 9
+        },
+        {
+          "id": "6:5652419806736175253",
+          "name": "totalPrice",
+          "type": 8
+        },
+        {
+          "id": "7:5937101617347083517",
+          "name": "deptPrice",
+          "type": 8
+        },
+        {
+          "id": "8:7092122252960109143",
+          "name": "paidPrice",
+          "type": 8
+        },
+        {
+          "id": "10:6424272621223914338",
+          "name": "billDate",
+          "type": 10
+        },
+        {
+          "id": "11:3758662647740822852",
+          "name": "accountId",
+          "type": 11,
+          "flags": 520,
+          "indexId": "8:5380772833693614760",
+          "relationTarget": "Accounts"
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "3:1282284697091285591",
+      "lastPropertyId": "4:3446697677721880845",
+      "name": "Classes",
+      "properties": [
+        {
+          "id": "1:8714771763289442696",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:3422545533966739856",
+          "name": "className",
+          "type": 9
+        },
+        {
+          "id": "3:3922708181381389599",
+          "name": "price",
+          "type": 8
+        },
+        {
+          "id": "4:3446697677721880845",
+          "name": "sessionsCount",
+          "type": 6
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "4:1634854073885538741",
+      "lastPropertyId": "1:2067393233415213383",
+      "name": "Expenses",
+      "properties": [
+        {
+          "id": "1:2067393233415213383",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        }
+      ],
+      "relations": [
+        {
+          "id": "2:5321010525842588089",
+          "name": "accounts",
+          "targetId": "1:5046885711521420716"
+        }
+      ]
+    },
+    {
+      "id": "5:6770917668614195288",
+      "lastPropertyId": "6:660623927334170308",
+      "name": "Member",
+      "properties": [
+        {
+          "id": "1:1564647787233821063",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:4177504983728470331",
+          "name": "gender",
+          "type": 9
+        },
+        {
+          "id": "3:3423979502393529898",
+          "name": "name",
+          "type": 9
+        },
+        {
+          "id": "4:9195261427593776764",
+          "name": "createdBy",
+          "type": 9
+        },
+        {
+          "id": "5:5185294347436189617",
+          "name": "phoneNo",
+          "type": 9
+        },
+        {
+          "id": "6:660623927334170308",
+          "name": "createdAt",
+          "type": 10
+        }
+      ],
+      "relations": [
+        {
+          "id": "3:4356462441650565663",
+          "name": "classes",
+          "targetId": "3:1282284697091285591"
+        },
+        {
+          "id": "7:5008683402095243950",
+          "name": "bills",
+          "targetId": "2:2111034196767112796"
+        },
+        {
+          "id": "11:6123950173827862710",
+          "name": "products",
+          "targetId": "7:5581596290817093742"
+        }
+      ]
+    },
+    {
+      "id": "6:1759709665385556246",
+      "lastPropertyId": "9:7248598300085710317",
+      "name": "Payment",
+      "properties": [
+        {
+          "id": "1:3368203925847995425",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:1016976451592350213",
+          "name": "paymentDate",
+          "type": 10
+        },
+        {
+          "id": "8:221632559022320689",
+          "name": "billId",
+          "type": 11,
+          "flags": 520,
+          "indexId": "7:3729893398845539421",
+          "relationTarget": "Bills"
+        },
+        {
+          "id": "9:7248598300085710317",
+          "name": "totalPayedPrice",
+          "type": 8
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "7:5581596290817093742",
+      "lastPropertyId": "7:1170994693190204825",
+      "name": "Products",
+      "properties": [
+        {
+          "id": "1:1654840613847134460",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:4455440162030017446",
+          "name": "name",
+          "type": 9
+        },
+        {
+          "id": "4:1686517529648818212",
+          "name": "price",
+          "type": 8
+        },
+        {
+          "id": "6:5635105978302268500",
+          "name": "count",
+          "type": 6
+        },
+        {
+          "id": "7:1170994693190204825",
+          "name": "supplierId",
+          "type": 11,
+          "flags": 520,
+          "indexId": "9:3758799770450850182",
+          "relationTarget": "Suppliers"
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "8:5165578603782852549",
+      "lastPropertyId": "6:4020236479488019010",
+      "name": "SubscribeModel",
+      "properties": [
+        {
+          "id": "1:7866533086741129101",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:1263856331665615005",
+          "name": "subscribeLong",
+          "type": 6
+        },
+        {
+          "id": "3:5136063832053296193",
+          "name": "classesId",
+          "type": 11,
+          "flags": 520,
+          "indexId": "4:5950877700149631200",
+          "relationTarget": "Classes"
+        },
+        {
+          "id": "4:6954313475138865642",
+          "name": "memberId",
+          "type": 11,
+          "flags": 520,
+          "indexId": "5:410230525490032305",
+          "relationTarget": "Member"
+        },
+        {
+          "id": "5:7124156376879821124",
+          "name": "startSubscribe",
+          "type": 10
+        },
+        {
+          "id": "6:4020236479488019010",
+          "name": "endSubscribe",
+          "type": 10
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "9:1025064547876277320",
+      "lastPropertyId": "5:3720792043691839812",
+      "name": "Users",
+      "properties": [
+        {
+          "id": "1:2368606453070327918",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:2310091166069279624",
+          "name": "name",
+          "type": 9
+        },
+        {
+          "id": "3:5127585963107878572",
+          "name": "phoneNo",
+          "type": 9
+        },
+        {
+          "id": "4:6634554605971694469",
+          "name": "password",
+          "type": 9
+        },
+        {
+          "id": "5:3720792043691839812",
+          "name": "auth",
+          "type": 9
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "10:2727355850923980021",
+      "lastPropertyId": "2:1129575605745097310",
+      "name": "Suppliers",
+      "properties": [
+        {
+          "id": "1:6647725197633114607",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:1129575605745097310",
+          "name": "name",
+          "type": 9
+        }
+      ],
+      "relations": [
+        {
+          "id": "9:3787556221339459399",
+          "name": "products",
+          "targetId": "7:5581596290817093742"
+        },
+        {
+          "id": "10:1949775291980302285",
+          "name": "bills",
+          "targetId": "2:2111034196767112796"
+        }
+      ]
+    }
+  ],
+  "lastEntityId": "10:2727355850923980021",
+  "lastIndexId": "9:3758799770450850182",
+  "lastRelationId": "11:6123950173827862710",
+  "lastSequenceId": "0:0",
+  "modelVersion": 5,
+  "modelVersionParserMinimum": 5,
+  "retiredEntityUids": [],
+  "retiredIndexUids": [
+    3858042271443700738,
+    2620569368074062898,
+    6258544095297843357
+  ],
+  "retiredPropertyUids": [
+    5691836458244011072,
+    5061134154932771465,
+    5923716232836071916,
+    1366040780474879033,
+    6468715424770339961,
+    7690364769981284898,
+    6402643015121494630,
+    4803502756764076810,
+    8900119096585909317,
+    6129156312763828710
+  ],
+  "retiredRelationUids": [
+    8880814366950476209,
+    1263949949627980043,
+    5701640725816337270,
+    657815443010951443
+  ],
+  "version": 1
+}
